@@ -13,7 +13,7 @@
     <a href='index.html'><button id ='userbutton'>Back</button></a>
 	 <div id="result2"></div>
      <script>
-        document.getElementById('result2').innerHTML=localStorage.getItem('searchvalue');
+        
         var x = localStorage.getItem('searchvalue')
         fetch('https://api.github.com/users/'+ x)
         .then((result) => result.json())
@@ -26,6 +26,7 @@
             <p > <a href="${data.html_url}" id='userpage'>${'Name: '}<i>${data.login}</i></a></p>
             <p class =  'boo'> ${'Type: '}<i>${data.type}</i></p>
             <p id = 'org'></p>
+           
             <p id ='bo'>${'Repo Names: '}<ul>
             <li id='one'></li>
             <li id ='two'></li>
@@ -51,16 +52,17 @@
                 `
                 
             })
-		 fetch(data.organizations_url)
+            fetch(data.organizations_url)
             .then((result)=>result.json())
             .then((data)=>{
                 console.log(data)
                 document.getElementById('org').innerHTML=`
                <a href = 'https://github.com/${data[0].login}'>${'Company: '}<i>${data[0].login}</i></a>
                 `
-             
+                
+            })
+            
         })
-	})
     </script> 
 	<div id ='result3'></div>	
 	
@@ -73,7 +75,3 @@
 
 
 </html>
-	
-
-	
-
