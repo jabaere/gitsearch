@@ -25,7 +25,7 @@
             <div class = 'container'>
             <p > <a href="${data.html_url}" id='userpage'>${'Name: '}<i>${data.login}</i></a></p>
             <p class =  'boo'> ${'Type: '}<i>${data.type}</i></p>
-            
+            <p id = 'org'></p>
             <p id ='bo'>${'Repo Names: '}<ul>
             <li id='one'></li>
             <li id ='two'></li>
@@ -51,6 +51,14 @@
                 `
                 
             })
+		 fetch(data.organizations_url)
+            .then((result)=>result.json())
+            .then((data)=>{
+                console.log(data)
+                document.getElementById('org').innerHTML=`
+               <a href = 'https://github.com/${data[0].login}'>${'Company: '}<i>${data[0].login}</i></a>
+                `
+             
         })
     </script> 
 	<div id ='result3'></div>	
