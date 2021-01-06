@@ -22,7 +22,7 @@ img {
     transition: 0.3s;
     width: 23%;
     border-radius: 5px;
-    
+    color:honeydew;
   }
   .card:hover {
       box-shadow: 0 8px 16px 0 rgba(240, 234, 234, 0.2);
