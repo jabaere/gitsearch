@@ -2,7 +2,6 @@ var form = document.getElementById('myform')
 
 form.addEventListener('submit',function(i){
 
-	i.preventDefault()
 
 	var search = document.getElementById('search').value
 	
@@ -33,7 +32,7 @@ form.addEventListener('submit',function(i){
 		fetch(data.repos_url)
 		.then((result)=>result.json())
 		.then((data)=>{
-			console.log(data)
+			
 			document.getElementById('one').innerHTML=`
 			<i>${data[0].name}</i>
 			`
@@ -50,7 +49,7 @@ form.addEventListener('submit',function(i){
 });
 
 
-//console.log(data.login)
+
 
 
 
