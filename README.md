@@ -1,1 +1,1 @@
-# Search for Githab users via gihtub api
+# Search for github users via gihtub api
